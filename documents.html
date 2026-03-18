@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documents — Collectif Toilettes Dignes</title>
+<title>Documents — Collectif "Des Toilettes Dignes à Pablo Neruda!"</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,75 +11,42 @@
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
-      <span class="logo-mark">✊</span>
-      Collectif Toilettes Dignes
+    <!--  <span class="logo-mark">✊</span> -->
+      Collectif "Des Toilettes Dignes à Pablo Neruda!"
     </a>
     <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="demarches.html">Nos démarches</a>
       <a href="documents.html" class="current">Documents</a>
-      <a href="membres.html" class="nav-members">🔒 Espace membres</a>
+       <a href="sondage.html" class="current">Sondage (à venir)</a>
+      <a href="membres.html" class="nav-members">🔒 Espace interne</a>
     </nav>
   </div>
 </header>
 
 <div class="page">
 
-  <div class="section-header">
+ <!-- <div class="section-header">
     <div class="section-bar"></div>
     <h1 class="section-title">Documents</h1>
     <p class="section-sub">Courriers, constats et photos — les preuves de notre mobilisation</p>
   </div>
-
-  <!-- COURRIERS -->
+-->
+  <!-- COURRIER -->
   <h2 style="font-family: var(--font-h); font-size: 1.15rem; margin-bottom: 16px; color: var(--ink);">📄 Courriers et comptes-rendus</h2>
 
   <div style="margin-bottom: 40px;">
     <div class="doc-item">
       <div class="doc-icon pdf">📕</div>
       <div class="doc-info">
-        <div class="doc-name">Courrier n°1 — Signalement à la direction</div>
-        <div class="doc-meta">PDF · Octobre 2025 · 2 pages</div>
+        <div class="doc-name">Courrier au Département </div>
+        <div class="doc-meta">PDF · Février 2025 · </div>
       </div>
-      <a href="#" class="doc-dl">Télécharger →</a>
+      <a href="lettre_departement" class="doc-dl">Télécharger →</a>
     </div>
 
-    <div class="doc-item">
-      <div class="doc-icon pdf">📕</div>
-      <div class="doc-info">
-        <div class="doc-name">Courrier n°2 — Demande au département</div>
-        <div class="doc-meta">PDF · Novembre 2025 · 3 pages</div>
-      </div>
-      <a href="#" class="doc-dl">Télécharger →</a>
-    </div>
-
-    <div class="doc-item">
-      <div class="doc-icon pdf">📕</div>
-      <div class="doc-info">
-        <div class="doc-name">Courrier n°3 — Relance en recommandé</div>
-        <div class="doc-meta">PDF · Février 2026 · 4 pages</div>
-      </div>
-      <a href="#" class="doc-dl">Télécharger →</a>
-    </div>
-
-    <div class="doc-item">
-      <div class="doc-icon doc">📗</div>
-      <div class="doc-info">
-        <div class="doc-name">Compte-rendu de visite des sanitaires</div>
-        <div class="doc-meta">PDF · Décembre 2025 · 5 pages + photos</div>
-      </div>
-      <a href="#" class="doc-dl">Télécharger →</a>
-    </div>
-
-    <div class="doc-item">
-      <div class="doc-icon img">📘</div>
-      <div class="doc-info">
-        <div class="doc-name">Textes réglementaires — Normes sanitaires en ERP</div>
-        <div class="doc-meta">PDF · Compilation · 8 pages</div>
-      </div>
-      <a href="#" class="doc-dl">Télécharger →</a>
-    </div>
+  
 
     <div class="hint">
       💡 <strong>Pour lier vos fichiers :</strong> placez vos PDF dans le même dossier que le site sur GitHub, puis remplacez les <code>href="#"</code> par <code>href="nom-du-fichier.pdf"</code>.
@@ -93,38 +60,27 @@
   <div class="photo-grid">
     <div class="photo-slot">
       <div class="ph-icon">📷</div>
-      <div class="ph-label">Verrou cassé — Bloc B</div>
+      <div class="ph-label">Sanitaires Garçons 1</div>
     </div>
     <div class="photo-slot">
       <div class="ph-icon">📷</div>
-      <div class="ph-label">Éclairage défaillant</div>
+      <div class="ph-label">Sanitaires Garçons 2</div>
     </div>
     <div class="photo-slot">
       <div class="ph-icon">📷</div>
-      <div class="ph-label">Absence de savon</div>
+      <div class="ph-label">Sanitaires Garçons 3</div>
     </div>
-    <div class="photo-slot">
-      <div class="ph-icon">📷</div>
-      <div class="ph-label">Accessibilité PMR absente</div>
-    </div>
-    <div class="photo-slot">
-      <div class="ph-icon">📷</div>
-      <div class="ph-label">Porte sans fermeture</div>
-    </div>
-    <div class="photo-slot">
-      <div class="ph-icon">📷</div>
-      <div class="ph-label">État général</div>
-    </div>
+   
+   
   </div>
 
-  <div class="hint" style="margin-top: 18px;">
+ <div class="hint" style="margin-top: 18px;">
     💡 <strong>Pour ajouter vos photos :</strong> remplacez chaque bloc <code>photo-slot</code> par une balise <code>&lt;img src="photo.jpg" alt="description"&gt;</code>. Déposez vos images dans le dossier du site sur GitHub.
   </div>
-
 </div>
 
 <footer>
-  <p>© 2026 Collectif Parents — Toilettes Dignes · Collège Pablo Neruda</p>
+  <p>© 2026 Collectif Parents "Des Toilettes Dignes à Pablo Neruda!"</p>
   <p>Site créé bénévolement par des parents d'élèves</p>
 </footer>
 
