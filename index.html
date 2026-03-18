@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collectif Parents — Toilettes Dignes au Collège</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CSS VARIABLES & RESET
+   ============================================ */
+:root {
+  --ink: #1b2035;
+  --cream: #faf8f4;
+  --warm: #f0ece3;
+  --accent: #b5302a;
+  --accent-hover: #9a2520;
+  --accent-soft: #fdeae9;
+  --blue: #2a3d6e;
+  --blue-deep: #1e2d52;
+  --blue-soft: #e6eaf4;
+  --green: #2b7a5b;
+  --green-soft: #e4f3ec;
+  --gold: #c9982e;
+  --gold-soft: #fdf3dd;
+  --gray: #7a7b8a;
+  --gray-light: #d4d1ca;
+  --white: #ffffff;
+  --font-h: 'Playfair Display', Georgia, serif;
+  --font-b: 'Nunito Sans', 'Segoe UI', sans-serif;
+  --shadow-s: 0 1px 4px rgba(27,32,53,0.06);
+  --shadow-m: 0 4px 20px rgba(27,32,53,0.09);
+  --shadow-l: 0 10px 40px rgba(27,32,53,0.12);
+  --radius: 12px;
+  --maxw: 1060px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--font-b);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ============================================
+   HEADER & NAV
+   ============================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--blue-deep);
+  box-shadow: var(--shadow-m);
+}
+
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+}
+
+.logo {
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.logo-badge {
+  width: 34px; height: 34px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+}
+
+nav#main-nav { display: flex; gap: 2px; }
+
+nav#main-nav a {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+nav#main-nav a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+nav#main-nav a.active { color: #fff; background: rgba(255,255,255,0.15); }
+
+.nav-private {
+  margin-left: 8px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-private a {
+  background: rgba(197,152,46,0.2) !important;
+  color: var(--gold) !important;
+}
+
+.nav-private a:hover {
+  background: rgba(197,152,46,0.3) !important;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  background: linear-gradient(150deg, var(--blue-deep) 0%, var(--blue) 45%, #3a6b5c 100%);
+  color: var(--white);
+  padding: 80px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(181,48,42,0.12), transparent),
+    radial-gradient(ellipse 500px 500px at 85% 15%, rgba(201,152,46,0.1), transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero h1 em { color: var(--gold); font-style: italic; }
+
+.hero-desc {
+  font-size: 1.1rem;
+  opacity: 0.88;
+  max-width: 540px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-family: var(--font-b);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(181,48,42,0.25);
+}
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(181,48,42,0.35); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.35);
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+.hero-counters {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 52px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.counter { text-align: center; }
+.counter .num { font-family: var(--font-h); font-size: 2.2rem; color: var(--gold); font-weight: 700; }
+.counter .lbl { font-size: 0.82rem; opacity: 0.65; margin-top: 2px; }
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.section + .section { padding-top: 0; }
+
+.section-header { margin-bottom: 40px; }
+
+.section-bar {
+  width: 40px; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-h);
+  font-size: 1.85rem;
+  color: var(--blue);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.section-sub {
+  color: var(--gray);
+  font-size: 1.02rem;
+  font-weight: 300;
+}
+
+/* ============================================
+   TAB SYSTEM
+   ============================================ */
+.tabs-bar {
+  display: flex;
+  gap: 4px;
+  background: var(--warm);
+  padding: 5px;
+  border-radius: var(--radius);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.tab-btn:hover { color: var(--ink); background: rgba(255,255,255,0.5); }
+
+.tab-btn.active {
+  background: var(--white);
+  color: var(--blue);
+  box-shadow: var(--shadow-s);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.tab-panel.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-s);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-m);
+  transform: translateY(-3px);
+}
+
+.card-badge {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.card-badge.red { background: var(--accent-soft); }
+.card-badge.blue { background: var(--blue-soft); }
+.card-badge.green { background: var(--green-soft); }
+.card-badge.gold { background: var(--gold-soft); }
+
+.card h3 {
+  font-family: var(--font-h);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--blue);
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.card-date {
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: gap var(--transition);
+}
+
+.card-link:hover { gap: 8px; }
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline { position: relative; padding-left: 32px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--gray-light);
+  border-radius: 1px;
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.tl-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -32px; top: 6px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.tl-item.highlight .tl-dot { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+
+.tl-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.tl-title {
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.tl-desc {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   DEMAND LIST
+   ============================================ */
+.demand-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-s);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.demand-num {
+  width: 36px; height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.demand-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-top: 6px;
+}
+
+.status-pending { background: #fef3cd; color: #856404; }
+.status-refused { background: #fdeaea; color: #a33; }
+.status-waiting { background: #e0ecff; color: #2558a8; }
+
+/* ============================================
+   PHOTO GRID
+   ============================================ */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.photo-slot {
+  aspect-ratio: 4/3;
+  background: var(--warm);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+  border: 2px dashed var(--gray-light);
+  transition: var(--transition);
+  cursor: default;
+  text-align: center;
+  padding: 16px;
+}
+
+.photo-slot .ph-icon { font-size: 2rem; margin-bottom: 8px; opacity: 0.5; }
+.photo-slot .ph-label { font-weight: 600; }
+.photo-slot .ph-desc { font-size: 0.78rem; margin-top: 2px; }
+
+/* ============================================
+   DOC LIST
+   ============================================ */
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--white);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-s);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: var(--transition);
+}
+
+.doc-item:hover { box-shadow: var(--shadow-m); }
+
+.doc-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  min-width: 42px;
+}
+
+.doc-icon.pdf { background: #fdeaea; color: var(--accent); }
+.doc-icon.img { background: var(--blue-soft); color: var(--blue); }
+.doc-icon.doc { background: var(--green-soft); color: var(--green); }
+
+.doc-info { flex: 1; }
+.doc-name { font-weight: 600; font-size: 0.92rem; }
+.doc-meta { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+
+.doc-dl {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ============================================
+   PRIVATE AREA
+   ============================================ */
+.private-gate {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.private-gate .lock-icon {
+  width: 72px; height: 72px;
+  background: var(--gold-soft);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 24px;
+}
+
+.private-gate h3 {
+  font-family: var(--font-h);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--blue);
+}
+
+.private-gate p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.pw-form {
+  display: flex;
+  gap: 10px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.pw-input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 2px solid var(--gray-light);
+  border-radius: 50px;
+  font-family: var(--font-b);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+  background: var(--white);
+}
+
+.pw-input:focus { border-color: var(--blue); }
+
+.pw-input.error { border-color: var(--accent); animation: shake 0.4s; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.pw-submit {
+  padding: 12px 24px;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pw-submit:hover { background: #b5872a; }
+
+.pw-error-msg {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 12px;
+  display: none;
+  font-weight: 600;
+}
+
+.private-content { display: none; }
+.private-content.unlocked { display: block; animation: fadeIn 0.4s ease; }
+
+.private-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold-soft);
+  color: #856404;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+/* ============================================
+   CONTACT / CTA
+   ============================================ */
+.cta-band {
+  background: var(--blue-deep);
+  color: var(--white);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-family: var(--font-h);
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.cta-band p {
+  opacity: 0.8;
+  max-width: 500px;
+  margin: 0 auto 28px;
+  font-weight: 300;
+}
+
+.cta-band .btn-primary { font-size: 1rem; padding: 14px 36px; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.82rem;
+  color: var(--gray);
+  border-top: 1px solid var(--gray-light);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  nav#main-nav {
+    display: none;
+    position: absolute;
+    top: 66px; left: 0; right: 0;
+    background: var(--blue-deep);
+    flex-direction: column;
+    padding: 12px 16px 20px;
+    gap: 4px;
+    box-shadow: var(--shadow-l);
+  }
+
+  nav#main-nav.open { display: flex; }
+
+  .nav-private {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero { padding: 56px 20px 52px; }
+  .hero-counters { gap: 28px; }
+  .counter .num { font-size: 1.6rem; }
+  .section { padding: 48px 20px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .pw-form { flex-direction: column; }
+  .tabs-bar { gap: 2px; }
+  .tab-btn { padding: 8px 14px; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.65rem; }
+  .hero-counters { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-badge">✊</div>
+      <span>Collectif Toilettes Dignes</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav id="main-nav">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#contenu">Informations</a>
+      <a href="#contact">Contact</a>
+      <span class="nav-private">
+        <a href="#espace-prive">🔒 Espace Membres</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="hero-badge">🏫 Collège [Nom du collège] — Parents mobilisés</div>
+    <h1>Des toilettes <em>dignes</em> pour nos enfants</h1>
+    <p>Notre collectif de parents d'élèves agit pour que les conditions d'hygiène, de sécurité et d'accessibilité des sanitaires du collège soient enfin à la hauteur des besoins de nos enfants.</p>
+    <div class="hero-actions">
+      <a href="#contenu" class="btn btn-primary">Découvrir nos actions →</a>
+      <a href="#contact" class="btn btn-outline">Nous rejoindre</a>
+    </div>
+    <div class="hero-counters">
+      <div class="counter">
+        <div class="num">3</div>
+        <div class="lbl">Courriers envoyés</div>
+      </div>
+      <div class="counter">
+        <div class="num">0</div>
+        <div class="lbl">Réponses reçues</div>
+      </div>
+      <div class="counter">
+        <div class="num">45+</div>
+        <div class="lbl">Parents mobilisés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MAIN PUBLIC CONTENT — TABS
+     ============================================ -->
+<div class="section" id="contenu">
+  <div class="section-header">
+    <div class="section-bar"></div>
+    <h2 class="section-title">Nos informations</h2>
+    <p class="section-sub">Tout ce qu'il faut savoir sur notre mobilisation et l'état des sanitaires</p>
+  </div>
+
+  <div class="tabs-bar" role="tablist">
+    <button class="tab-btn active" onclick="switchTab(event, 'tab-historique')" role="tab">📅 Historique</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-demandes')" role="tab">📋 Nos demandes</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-photos')" role="tab">📸 Photos</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-docs')" role="tab">📄 Documents</button>
+  </div>
+
+  <!-- TAB: HISTORIQUE -->
+  <div class="tab-panel active" id="tab-historique">
+    <div class="timeline">
+
+      <div class="tl-item highlight">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Mars 2026</div>
+        <div class="tl-title">Lancement du site de mobilisation</div>
+        <div class="tl-desc">Création de ce site pour informer l'ensemble des parents d'élèves et élargir notre action.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Février 2026</div>
+        <div class="tl-title">Troisième courrier au département — sans réponse</div>
+        <div class="tl-desc">Envoi en recommandé au service des bâtiments du Conseil départemental. Toujours aucune réponse à ce jour.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Décembre 2025</div>
+        <div class="tl-title">Constat sur place avec des parents élus</div>
+        <div class="tl-desc">Visite des sanitaires avec des représentants de parents : verrous cassés, absence de papier, éclairage défaillant, accessibilité PMR inexistante.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Octobre 2025</div>
+        <div class="tl-title">Premier signalement au collège</div>
+        <div class="tl-desc">Plusieurs parents alertent la direction sur l'état des toilettes après les témoignages de leurs enfants.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB: DEMANDES -->
+  <div class="tab-panel" id="tab-demandes">
+
+    <div class="demand-item">
+      <div class="demand-num">1</div>
+      <div>
+        <strong>Sécurisation des sanitaires</strong>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 4px;">Remplacement de tous les verrous défaillants, portes qui ferment correctement, séparations entre les cabines intactes.</p>
+        <span class="demand-status status-waiting">En attente de réponse</span>
+      </div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-num">2</div>
+      <div>
+        <strong>Mise aux normes d'accessibilité PMR</strong>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 4px;">Au moins un bloc sanitaire accessible aux personnes à mobilité réduite, conforme à la réglementation en vigueur.</p>
+        <span class="demand-status status-waiting">En attente de réponse</span>
+      </div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-num">3</div>
+      <div>
+        <strong>Hygiène et fournitures</strong>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 4px;">Présence permanente de papier toilette, savon, essuie-mains. Nettoyage renforcé au minimum deux fois par jour.</p>
+        <span class="demand-status status-pending">Partiellement pris en compte</span>
+      </div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-num">4</div>
+      <div>
+        <strong>Éclairage et ventilation</strong>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 4px;">Remise en état de l'éclairage dans tous les blocs sanitaires. Installation ou réparation de la ventilation.</p>
+        <span class="demand-status status-refused">Non traité</span>
+      </div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-num">5</div>
+      <div>
+        <strong>Plan de rénovation à moyen terme</strong>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 4px;">Présentation d'un calendrier précis de travaux de rénovation complète des sanitaires par le département.</p>
+        <span class="demand-status status-waiting">En attente de réponse</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB: PHOTOS -->
+  <div class="tab-panel" id="tab-photos">
+    <p style="color: var(--gray); margin-bottom: 20px;">Constats photographiques relevés lors des visites. <em>Remplacez ces emplacements par vos propres images.</em></p>
+    <div class="photo-grid">
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 1</div>
+        <div class="ph-desc">Verrou cassé — Bloc B</div>
+      </div>
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 2</div>
+        <div class="ph-desc">Éclairage défaillant</div>
+      </div>
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 3</div>
+        <div class="ph-desc">Absence de savon</div>
+      </div>
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 4</div>
+        <div class="ph-desc">Accessibilité PMR absente</div>
+      </div>
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 5</div>
+        <div class="ph-desc">Porte sans fermeture</div>
+      </div>
+      <div class="photo-slot">
+        <div class="ph-icon">📷</div>
+        <div class="ph-label">Photo 6</div>
+        <div class="ph-desc">État général des sanitaires</div>
+      </div>
+    </div>
+    <p style="color: var(--gray); font-size: 0.85rem; margin-top: 16px;">
+      💡 <strong>Pour ajouter vos photos :</strong> remplacez les blocs ci-dessus par des balises <code>&lt;img src="votre-photo.jpg" alt="description"&gt;</code>
+    </p>
+  </div>
+
+  <!-- TAB: DOCUMENTS -->
+  <div class="tab-panel" id="tab-docs">
+
+    <div class="doc-item">
+      <div class="doc-icon pdf">📕</div>
+      <div class="doc-info">
+        <div class="doc-name">Courrier n°1 — Signalement à la direction</div>
+        <div class="doc-meta">PDF · Octobre 2025 · 2 pages</div>
+      </div>
+      <a href="#" class="doc-dl">Télécharger →</a>
+    </div>
+
+    <div class="doc-item">
+      <div class="doc-icon pdf">📕</div>
+      <div class="doc-info">
+        <div class="doc-name">Courrier n°2 — Demande au département</div>
+        <div class="doc-meta">PDF · Décembre 2025 · 3 pages</div>
+      </div>
+      <a href="#" class="doc-dl">Télécharger →</a>
+    </div>
+
+    <div class="doc-item">
+      <div class="doc-icon pdf">📕</div>
+      <div class="doc-info">
+        <div class="doc-name">Courrier n°3 — Relance en recommandé</div>
+        <div class="doc-meta">PDF · Février 2026 · 4 pages</div>
+      </div>
+      <a href="#" class="doc-dl">Télécharger →</a>
+    </div>
+
+    <div class="doc-item">
+      <div class="doc-icon doc">📗</div>
+      <div class="doc-info">
+        <div class="doc-name">Compte-rendu de visite des sanitaires</div>
+        <div class="doc-meta">PDF · Décembre 2025 · 5 pages + photos</div>
+      </div>
+      <a href="#" class="doc-dl">Télécharger →</a>
+    </div>
+
+    <div class="doc-item">
+      <div class="doc-icon img">📘</div>
+      <div class="doc-info">
+        <div class="doc-name">Textes réglementaires — Normes sanitaires en ERP</div>
+        <div class="doc-meta">PDF · Compilation · 8 pages</div>
+      </div>
+      <a href="#" class="doc-dl">Télécharger →</a>
+    </div>
+
+    <p style="color: var(--gray); font-size: 0.85rem; margin-top: 16px;">
+      💡 <strong>Pour lier vos fichiers :</strong> hébergez vos PDF dans le même dossier et remplacez les <code>href="#"</code> par <code>href="nom-du-fichier.pdf"</code>
+    </p>
+  </div>
+</div>
+
+<!-- ============================================
+     ESPACE PRIVÉ (protégé par mot de passe)
+     ============================================ -->
+<div class="section" id="espace-prive" style="padding-top: 72px;">
+  <div class="section-header">
+    <div class="section-bar" style="background: var(--gold);"></div>
+    <h2 class="section-title">Espace Membres</h2>
+    <p class="section-sub">Réservé aux parents membres du collectif</p>
+  </div>
+
+  <!-- GATE: mot de passe -->
+  <div class="private-gate" id="pw-gate">
+    <div class="lock-icon">🔒</div>
+    <h3>Accès réservé</h3>
+    <p>Cet espace contient des documents et notes internes au collectif. Entrez le mot de passe qui vous a été communiqué.</p>
+    <div class="pw-form">
+      <input type="password" class="pw-input" id="pw-input" placeholder="Mot de passe…" onkeydown="if(event.key==='Enter')checkPassword()">
+      <button class="pw-submit" onclick="checkPassword()">Accéder</button>
+    </div>
+    <div class="pw-error-msg" id="pw-error">Mot de passe incorrect. Contactez un membre du collectif.</div>
+  </div>
+
+  <!-- CONTENU PRIVÉ (masqué par défaut) -->
+  <div class="private-content" id="private-area">
+    <div class="private-notice">🔓 Espace déverrouillé — Bienvenue !</div>
+
+    <div class="grid grid-2" style="margin-bottom: 32px;">
+      <div class="card">
+        <div class="card-badge gold">📝</div>
+        <h3>Notes internes</h3>
+        <div style="margin-top: 12px;">
+          <div class="doc-item" style="margin-bottom: 8px; box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon doc">📝</div>
+            <div class="doc-info">
+              <div class="doc-name">CR réunion du 5 mars 2026</div>
+              <div class="doc-meta">Décisions et prochaines étapes</div>
+            </div>
+          </div>
+          <div class="doc-item" style="margin-bottom: 8px; box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon doc">📝</div>
+            <div class="doc-info">
+              <div class="doc-name">Liste des contacts institutionnels</div>
+              <div class="doc-meta">Département, mairie, rectorat</div>
+            </div>
+          </div>
+          <div class="doc-item" style="box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon doc">📝</div>
+            <div class="doc-info">
+              <div class="doc-name">Stratégie médias et communication</div>
+              <div class="doc-meta">Plan d'action proposé</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-badge gold">📂</div>
+        <h3>Documents confidentiels</h3>
+        <div style="margin-top: 12px;">
+          <div class="doc-item" style="margin-bottom: 8px; box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon pdf">📕</div>
+            <div class="doc-info">
+              <div class="doc-name">Brouillon courrier au préfet</div>
+              <div class="doc-meta">À relire avant envoi</div>
+            </div>
+          </div>
+          <div class="doc-item" style="margin-bottom: 8px; box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon pdf">📕</div>
+            <div class="doc-info">
+              <div class="doc-name">Devis estimatif travaux</div>
+              <div class="doc-meta">Obtenu via un parent architecte</div>
+            </div>
+          </div>
+          <div class="doc-item" style="box-shadow: none; border: 1px solid var(--gray-light);">
+            <div class="doc-icon pdf">📕</div>
+            <div class="doc-info">
+              <div class="doc-name">Témoignages élèves (anonymisés)</div>
+              <div class="doc-meta">Recueillis en février 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="background: var(--gold-soft); border-color: rgba(201,152,46,0.2);">
+      <h3 style="color: #7a6520;">💬 Bloc-notes du collectif</h3>
+      <p style="color: #7a6520; font-size: 0.9rem; margin-bottom: 12px;">Espace pour laisser des messages aux autres membres. Modifiez directement le HTML pour ajouter vos notes.</p>
+      <div style="background: var(--white); border-radius: 8px; padding: 16px; font-size: 0.9rem; color: var(--gray); border: 1px solid rgba(201,152,46,0.2);">
+        <p><strong>Marie (12/03) :</strong> J'ai eu le service bâtiments au téléphone, ils disent que notre dossier est « en cours d'examen ». À suivre…</p>
+        <hr style="border: none; border-top: 1px solid var(--gray-light); margin: 12px 0;">
+        <p><strong>Thomas (10/03) :</strong> Le journaliste de Sud-Ouest est intéressé par notre situation. Qui veut être le contact presse ?</p>
+        <hr style="border: none; border-top: 1px solid var(--gray-light); margin: 12px 0;">
+        <p><strong>Nadia (08/03) :</strong> Prochaine réunion le 22 mars à 18h30, salle polyvalente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     CTA BAND
+     ============================================ -->
+<section class="cta-band" id="contact">
+  <h2>Rejoignez le collectif</h2>
+  <p>Plus nous serons nombreux, plus notre voix portera. Chaque parent compte.</p>
+  <a href="mailto:collectif.toilettes@email.com" class="btn btn-primary">✉ Nous contacter par email</a>
+  <p style="opacity: 0.5; font-size: 0.82rem; margin-top: 16px;">collectif.toilettes@email.com</p>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <p>© 2026 Collectif Parents — Toilettes Dignes · Collège [Nom du collège]</p>
+  <p style="margin-top: 4px; font-size: 0.78rem;">Site créé bénévolement par des parents d'élèves · Hébergé sur GitHub Pages</p>
+</footer>
+
+<!-- ============================================
+     SCRIPTS
+     ============================================ -->
+<script>
+// ---- MOBILE MENU ----
+function toggleMenu() {
+  document.getElementById('main-nav').classList.toggle('open');
+}
+
+// Close menu on link click (mobile)
+document.querySelectorAll('#main-nav a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('main-nav').classList.remove('open');
+  });
+});
+
+// ---- TABS ----
+function switchTab(e, tabId) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  e.currentTarget.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+// ---- NAV ACTIVE STATE ----
+const sections = document.querySelectorAll('section[id], .section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) {
+      current = sec.id;
+    }
+  });
+  document.querySelectorAll('#main-nav a').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+
+// ---- PASSWORD PROTECTION ----
+// ⚠️ IMPORTANT : Changez ce mot de passe !
+// Ce n'est PAS une sécurité forte, c'est juste un filtre simple.
+// Pour un vrai secret, utilisez un Google Drive partagé.
+const MOT_DE_PASSE = "toilettes2026";
+
+function checkPassword() {
+  const input = document.getElementById('pw-input');
+  const errorMsg = document.getElementById('pw-error');
+
+  if (input.value === MOT_DE_PASSE) {
+    document.getElementById('pw-gate').style.display = 'none';
+    document.getElementById('private-area').classList.add('unlocked');
+    sessionStorage.setItem('ctd-auth', 'ok');
+  } else {
+    input.classList.add('error');
+    errorMsg.style.display = 'block';
+    setTimeout(() => input.classList.remove('error'), 500);
+  }
+}
+
+// Garder l'accès pendant la session de navigation
+if (sessionStorage.getItem('ctd-auth') === 'ok') {
+  document.getElementById('pw-gate').style.display = 'none';
+  document.getElementById('private-area').classList.add('unlocked');
+}
+</script>
+</body>
+</html>
