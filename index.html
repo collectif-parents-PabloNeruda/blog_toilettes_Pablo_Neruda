@@ -17,8 +17,21 @@
     <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
     <nav>
       <a href="index.html" class="current">Accueil</a>
-      <a href="demarches.html">Nos démarches</a>
+     <div class="dropdown">
+      <a href="demarches.html" >Nos démarches</a>
+      <div class="dropdown-menu">
+      <a href="demarches.html#demandes"> Résumé de nos demandes</a>
+      <a href="demarches.html#chronologie">Chronologie</a>      
+      </div>
+      </div>      
+      <div class="dropdown">
       <a href="documents.html">Documents</a>
+      <div class="dropdown-menu">
+      <a href="documents.html#ressources"> Ressources extérieures</a>
+      <a href="documents.html#photos">Constats photographiques</a>      
+      <a href="documents.html#courriers">Courriers et comptes-rendus</a>  
+      </div>
+      </div>  
       <a href="sondage.html">Sondage </a>
       <a href="membres.html" class="nav-members">🔒 Espace interne</a>
     </nav>
