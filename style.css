@@ -626,3 +626,61 @@ footer p + p { margin-top: 2px; }
   .pw-form { flex-direction: column; }
 }
 </style>
+
+
+/* ============================================
+   MENU DÉROULANT
+   ============================================ */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-pale);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-m);
+  min-width: 220px;
+  padding: 6px 0;
+  z-index: 300;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.dropdown-menu a:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 16px;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
